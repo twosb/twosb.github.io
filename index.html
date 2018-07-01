@@ -360,6 +360,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/07/01/결정계수_F 검정 통계량_관계/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="twosb">
+      <meta itemprop="description" content="I'm cutty sexy pretty elegant guy...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="twosb world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/01/결정계수_F 검정 통계량_관계/" itemprop="url">
+                  R-Squared(결정계수)& F 검정 통계량(F-Statistic)은 어떤 관계?
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-07-02 04:32:11 / Updated at: 04:39:21" itemprop="dateCreated datePublished" datetime="2018-07-02T04:32:11+09:00">2018-07-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MATH/" itemprop="url" rel="index"><span itemprop="name">MATH</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/01/결정계수_F 검정 통계량_관계/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/01/결정계수_F 검정 통계량_관계/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="R-Squared-결정계수-amp-F-검정-통계량-F-Statistic-은-어떤-관계"><a href="#R-Squared-결정계수-amp-F-검정-통계량-F-Statistic-은-어떤-관계" class="headerlink" title="R-Squared(결정계수) &amp; F 검정 통계량(F-Statistic)은 어떤 관계?"></a>R-Squared(결정계수) &amp; F 검정 통계량(F-Statistic)은 어떤 관계?</h3><p><a href="http://statart.tistory.com/37" target="_blank" rel="noopener">여기</a>에 관련 내용이 있긴 하다. 하지만 그냥 그래프만 보는게 이해가 더 쉬울 것 같아 가져와봤다!</p>
+<blockquote>
+<p>그림 출처 : <a href="https://stats.stackexchange.com/questions/96483/is-it-possible-to-get-a-negative-f-statistic-e-g-in-anova/96485" target="_blank" rel="noopener">Cross Validated</a></p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/37604501/42137795-baaf5454-7dad-11e8-86c1-05e22ef23633.png" alt="flp_highvar"></p>
+<blockquote>
+<p>[R^2 값은 작고 ▼, F-Statistic 값은 크다 ▲]</p>
+</blockquote>
+<p>해석은 다음과 같다.</p>
+<ul>
+<li>독립변수 X(Input)가 종속변수 Y(Output1)에 끼치는 영향은 비교적 <strong>유의미</strong>하다.</li>
+<li>그러나 데이터들을 그래프에 뿌려 추정한 회귀식 신뢰도는 <strong>낮다</strong>.<ul>
+<li>각 데이터들의 <strong>분산</strong>이 너무 커 제대로 된 예측을 할 수 없기 때문이다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/37604501/42137796-bad501c2-7dad-11e8-8f4d-739f8d3c418f.png" alt="flp_lowvar"></p>
+<blockquote>
+<p>[R^2 값은 크고 ▲, F-Statistic 값은 작다▼]</p>
+</blockquote>
+<p>해석은 정확히 반대로 해주면 되겠다.</p>
+<h3 id="결론"><a href="#결론" class="headerlink" title="결론 :"></a>결론 :</h3><p>R^2와 F-Statistic은 두 값 모두 추정한 모형이 <strong>적절한지</strong> 알려주지만,</p>
+<p>R^2는 데이터들이 저 빨간 회귀 직선에서 각 각 얼마나 떨어져 있는지<br>분산을 더한 값들을 토대로 예측이 정확한지!(=값이 큼), 안 정확한지(=값이 작음)</p>
+<p>F-Statistic은 데이터를 모아보니 선형이 잘 되는가? 를 따져보아<br>되면 값이 작고, 안되면 크다! 라는 것이다.</p>
+<p>R^2는 0과 1사이의 값이고, F-Statistic은 0부터 양의 무한대 값이다.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/07/01/Hexo 블로그 초간단 Markdown 이미지 업로드 방법/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1319,215 +1513,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/19/중앙대학원 컴퓨터공학과 합격/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="twosb">
-      <meta itemprop="description" content="I'm cutty sexy pretty elegant guy...">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="twosb world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/19/중앙대학원 컴퓨터공학과 합격/" itemprop="url">
-                  중앙대학원 컴퓨터공학과 합격!
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">작성일</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-06-19 21:40:25" itemprop="dateCreated datePublished" datetime="2018-06-19T21:40:25+09:00">2018-06-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-06-29 23:37:27" itemprop="dateModified" datetime="2018-06-29T23:37:27+09:00">2018-06-29</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/컴공대학원/" itemprop="url" rel="index"><span itemprop="name">컴공대학원</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/19/중앙대학원 컴퓨터공학과 합격/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/19/중앙대학원 컴퓨터공학과 합격/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="중앙대학원-컴퓨터공학과-합격-Feat-나노휠-Air-1000W-전동킥보드"><a href="#중앙대학원-컴퓨터공학과-합격-Feat-나노휠-Air-1000W-전동킥보드" class="headerlink" title="중앙대학원 컴퓨터공학과 합격! (Feat. 나노휠 Air 1000W 전동킥보드)"></a>중앙대학원 컴퓨터공학과 합격! (Feat. 나노휠 Air 1000W 전동킥보드)</h4><hr>
-<ol>
-<li>사실 기대한 건 아니었다! 특히나 문과 학부생+30살이라는 조건때문에 공대쪽 일반대학원에 진학할 수 있을거라는 생각을 하지 않았다. 그래서 연세 정보전문대학원도 지원을 했던거고.. 하지만 오히려 그 곳은 떨어지고 중대 컴퓨터공학과에 붙었다. 지원자수는 내가 마지막이었으니 총 22명, 아마 떨어진 사람이 없지 않을까..? 라는 생각을 한다. 어쨌든간에 일반대학원으로 진학하게 된 것은 좋은 일이다.</li>
-</ol>
-<ol start="2">
-<li>한가지 더 좋은 이유는 중대는 집에서 가깝다는 것이다. 단연코 이게 학교 선택의 이유로 작용해서는 안되겠지만, 기왕 된거 가까운게 좋은 것 아니겠는가? 그러나 <strong>석사생은 주차장 이용이 불가능하다.</strong> 이 문제를 타개하기 위해 두가지 선택지를 고르게 되었다.</li>
-</ol>
-<ul>
-<li><p><u>대중교통을 이용</u>한다 : 최소 2번의 버스 환승과 마의 중대 언덕을 버스 타고 다니려니 혼절각. 시간도 더 오래 걸린다.</p>
-</li>
-<li><p><u>또 다른 탈 것</u>을 산다 : 스쿠터를 우선 봤으나 어차피 아침 저녁 헬 시간에는 막힐 것 같았다. 그렇다면 다른 수단은 없을까?</p>
-<p>그리하여 찾아낸 것이 바로 <strong>전동킥보드</strong>다. 특히나 남성역 - 숭실대 - 중대 언덕을 넘기 위해서는 <strong>등판각</strong>이 좋은 녀석을 찾아야 했기 때문에-물론, 현충원으로 다니는 방법도 있지만- 3시간 정도 서치한 결과, 마감과 A/S, 배터리 수명은 헬이지만 중고값이 낮고 타다가 걍 버려도 될 정도의 모델을 찾았다.</p>
-</li>
-</ul>
-<p>  <img src="http://img.danawa.com/prod_img/500000/182/440/img/5440182_1.jpg?shrink=500:500&amp;_v=20180110160317" alt=""></p>
-<p>  <a href="http://prod.danawa.com/info/?pcode=5440182&amp;keyword=nq-air%201000w#bookmark_product_information" target="_blank" rel="noopener">나노휠 나노퀵 NQ-AIR 1000W+ 13Ah</a></p>
-<p>  알고보니 다나와 전동킥보드 판매 랭킹 1위더라.. -_- 왜 네이버  카페부터 가입해서 열심히 찾았나 몰라. 암튼 거기서는 대차게 까고 있는 모델인데 실사용 유저들이 갑툭튀해서 저는 잘 타고 있어요~ 하는 댓글을 믿기로 했다. 믿는 자에게 복이 온다니 안라하겠지 뭐.(추가 : 1000W+가 아니라 1000W이었슴다. 눈물..)</p>
-<p>  코스는 대강 아래와 같다.</p>
-<p>  <img src="https://i.imgur.com/QjDmyW5.png" alt=""></p>
-<p>  이 숭실대 - 중앙대 뒤편 달마사 부근 언덕.. 무섭긴 한데 그래도 잘 탈 수 있겠지?</p>
-<ol start="3">
-<li>중대 대학원 합격 후 컨택을 하느라 아주 심신이 지쳤었다. 보통 공대의 테크트리는 선 컨택 - 후 합격 구조인데, 난 자대도 아닌데다가 문과 출신이라 전혀 기대도 하지 않았기 때문이다. 덕분에 <a href="http://cse.cau.ac.kr/20141201/sub03/sub0302.php" target="_blank" rel="noopener">이 페이지</a>만 하루에 2~3시간 씩 뒤져봤던 것 같다. 메일을 3개 쯤 보냈고, 다행히 한 교수님께서 면담을 해보자고 답장이 오셔서 이것 저것 준비해 갔는데, 준비 하는 것 보다는 열심히 할 수 있는 자세를 계속해서 보여드리는 것이 중요한 것 같다. 연구 분야가 다르고, 연구실에 자리가 없어서 못들어갈 뻔 했다.. 다행히 연구실 구경과 연구실 가족들까지 소개 받고, 교수님께 감사의 인사를 드리고 패스트 캠퍼스 18주 과정이 끝나는 8월 중순~말 쯤 연구실에 들어가기로 했다. 물론, 그 전에 가끔 가서 눈도장을 찍어야겠지. 많이 발전한 상태로 들어가 나도 도움이 될 수 있는 사람이 되고싶다.</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1570,7 +1560,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">포스트</span>
                   </a>
                 </div>
@@ -1603,7 +1593,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">카테고리</span>
                   </a>
                 </div>
@@ -1700,7 +1692,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">태그</span>
                   </a>
                 </div>
