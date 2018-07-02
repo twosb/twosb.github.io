@@ -360,6 +360,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/10/Algorithm-Python-1-올바른-괄호-판단-괄호-제거/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="twosb">
+      <meta itemprop="description" content="I'm cutty sexy pretty elegant guy...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="twosb world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/10/Algorithm-Python-1-올바른-괄호-판단-괄호-제거/" itemprop="url">
+                  Algorithm Python 1 : 올바른 괄호 판단(괄호 제거)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-06-10 22:08:25" itemprop="dateCreated datePublished" datetime="2018-06-10T22:08:25+09:00">2018-06-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-06-29 23:37:27" itemprop="dateModified" datetime="2018-06-29T23:37:27+09:00">2018-06-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/10/Algorithm-Python-1-올바른-괄호-판단-괄호-제거/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/10/Algorithm-Python-1-올바른-괄호-판단-괄호-제거/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>출처 : 워낙 유명한 문제라 :)</p>
+</blockquote>
+<ul>
+<li>문제는 다음과 같습니다.</li>
+</ul>
+<h2 id="올바른-괄호인지-판단하기-Python"><a href="#올바른-괄호인지-판단하기-Python" class="headerlink" title="올바른 괄호인지 판단하기(Python)"></a>올바른 괄호인지 판단하기(Python)</h2><p>​ 본 문제에서는 입력으로 주어지는 괄호가 올바른 괄호인지를 판단하는 프로그램을 작성합니다. 예를 들어, ‘(())’ 은 올바른 괄호이지만, ‘(()))‘, 혹은 ‘(()()(’ 는 올바른 괄호가 아닙니다.</p>
+<ul>
+<li><h3 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h3><ul>
+<li>입력 : 괄호 pp가 주어집니다.</li>
+<li>출력 : pp가 올바른 괄호이면 YES, 그렇지 않으면 NO를 출력합니다.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3></li>
+</ul>
+<ol>
+<li><p>입력 예시 1 : <code>(())()</code></p>
+<p>출력 예시 1 : <strong>YES</strong></p>
+</li>
+<li><p>입력 예시 2 : <code>(((())())(()())((())()))</code></p>
+<p>출력 예시 2 : <strong>YES</strong></p>
+</li>
+<li><p>입력 예시 3 : <code>(())())()</code></p>
+<p>출력 예시 3 : <strong>NO</strong></p>
+</li>
+</ol>
+<ul>
+<li><h3 id="Python-풀이"><a href="#Python-풀이" class="headerlink" title="Python 풀이"></a>Python 풀이</h3><figure class="highlight pp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">pp = input()</span><br><span class="line">pp_comp = <span class="string">""</span></span><br><span class="line">if pp.count(<span class="string">"("</span>) != pp.count(<span class="string">")"</span>):</span><br><span class="line">    print(<span class="string">"NO"</span>)</span><br><span class="line">else:</span><br><span class="line">    for _ in range(len(pp)):</span><br><span class="line">        pp_comp = pp </span><br><span class="line">        pp = pp.replace(<span class="string">"()"</span>, <span class="string">""</span>)</span><br><span class="line">        if len(pp) == len(pp_comp):</span><br><span class="line">            print(<span class="string">"NO"</span>)</span><br><span class="line">            break</span><br><span class="line">        elif len(pp) == 0:</span><br><span class="line">            print(<span class="string">"YES"</span>)</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h3></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/06/TIL-1-I-can-do-anything/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -591,7 +805,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">포스트</span>
                   </a>
                 </div>
@@ -626,7 +840,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">카테고리</span>
                   </a>
                 </div>
@@ -733,7 +949,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">47</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">태그</span>
                   </a>
                 </div>
