@@ -406,7 +406,7 @@
                 
               
 
-              <time title="Post created: 2018-07-02 04:32:11 / Updated at: 05:02:45" itemprop="dateCreated datePublished" datetime="2018-07-02T04:32:11+09:00">2018-07-02</time>
+              <time title="Post created: 2018-07-02 04:32:11 / Updated at: 13:48:34" itemprop="dateCreated datePublished" datetime="2018-07-02T04:32:11+09:00">2018-07-02</time>
             
 
             
@@ -486,20 +486,25 @@
 </blockquote>
 <p>해석은 다음과 같다.</p>
 <ul>
-<li>독립변수 X(Input)가 종속변수 Y(Output1)에 끼치는 영향은 비교적 <strong>유의미</strong>하다.</li>
-<li>그러나 데이터들을 그래프에 뿌려 추정한 회귀식 신뢰도는 <strong>낮다</strong>.<ul>
-<li>각 데이터들의 <strong>분산</strong>이 너무 커 제대로 된 예측을 할 수 없기 때문이다.</li>
-</ul>
-</li>
+<li>독립변수 X(Input)가 종속변수 Y(Output1)에 끼치는 영향은 <strong>의미가 없다</strong>.</li>
+<li>데이터들을 그래프에 뿌려 추정한 회귀식 신뢰도 또한 <strong>낮다</strong>. 각 데이터들의 <strong>분산</strong>이 너무 커 제대로 된 예측을 할 수 없기 때문이다.</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/37604501/42137796-bad501c2-7dad-11e8-8f4d-739f8d3c418f.png" alt="flp_lowvar"></p>
 <blockquote>
-<p>[R^2 값은 크고 ▲, F-Statistic 값은 작다▼]</p>
+<p>[R^2 값은 크고 ▲, F-Statistic 값은 작다 ▼]</p>
 </blockquote>
-<p>해석은 정확히 반대로 해주면 되겠다.</p>
+<p>해석은 정확히 반대로 해주면 되겠다. 독립변수 X가 종속변수 Y에 미치는 영향도 크고, 추정 회귀식 신뢰도도 높다.</p>
 <h3 id="결론"><a href="#결론" class="headerlink" title="결론 :"></a>결론 :</h3><p>R^2와 F-Statistic은 두 값 모두 추정한 모형이 <strong>적절한지</strong> 알려주지만,</p>
-<p>R^2는 데이터들이 저 빨간 회귀 직선에서 각 각 얼마나 떨어져 있는지 분산을 더한 값들을 토대로 예측이 정확한지!(=값이 큼), 안 정확한지(=값이 작음)</p>
-<p>F-Statistic은 데이터를 모아보니 선형이 잘 되는가? 를 따져보아 되면 값이 작고, 안되면 크다! 라는 것이다.</p>
+<p><strong>R^2</strong>는 데이터들이 저 빨간 회귀 직선에서 각 각 얼마나 떨어져 있는지 분산을 더한 값들을 토대로 어떠한 계산을 한 결과가</p>
+<ul>
+<li>값이 크면 ☞ 예측 정확함</li>
+<li>값이 작으면 ☞ 예측 부정확함</li>
+</ul>
+<p><strong>F-Statistic</strong>은 데이터를 모아보니 선형이 잘 되는가? 를 따져보아</p>
+<ul>
+<li>값이 크면 ☞ 선형이 잘 안그려짐</li>
+<li>값이 작으면 ☞ 선형이 잘 그려짐</li>
+</ul>
 <p>R^2는 0과 1사이의 값이고, F-Statistic은 0부터 양의 무한대 값이다.</p>
 
           
