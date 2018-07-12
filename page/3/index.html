@@ -360,6 +360,249 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="twosb">
+      <meta itemprop="description" content="I'm cutty sexy pretty elegant guy...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="twosb world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/" itemprop="url">
+                  Hexo Github 블로그 설치 초보용 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-06-13 03:08:25" itemprop="dateCreated datePublished" datetime="2018-06-13T03:08:25+09:00">2018-06-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-06-29 23:37:27" itemprop="dateModified" datetime="2018-06-29T23:37:27+09:00">2018-06-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HEXO/" itemprop="url" rel="index"><span itemprop="name">HEXO</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>장점과 단점<ul>
+<li>장점 : </li>
+<li>단점 : </li>
+<li>최근 써져있는 Hexo 블로그 설치법과 추천 테마 설정, 타 PC에서 포스팅 하고 싶거나 백업 방법을 알려주고 싶어서 쓰게됨.(OS 변경이라든지, 포맷이라든지..)</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li>준비물 : Node.js, Git 설치<ul>
+<li><a href="https://nodejs.org/ko/download/" target="_blank" rel="noopener">1. Node.js Download</a> : OS에 맞게 8.11.2 LTS 설치</li>
+<li><a href="https://git-scm.com/download" target="_blank" rel="noopener">2. Git Download</a> : OS에 맞게 Git 설치</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>Hexo + NexT 테마 설치</strong> :</p>
+<ul>
+<li><p>Git Bash를 열고 명령어를 차곡차곡 입력하겠습니다.</p>
+</li>
+<li><p>여기서부터 다른 명령어는 필요 없고 아래대로 입력만 하세요. 조금만 어긋나도 작동이 안됩니다.</p>
+</li>
+<li><p>명령이 끝나면 바로 다음 명령어를 복사해서 입력해주세요. 입력 후에는 Enter키를 눌러줍니다.</p>
+</li>
+</ul>
+</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>HEXO 구동틀을 PC에 설치해주는겁니다.</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 폴더명</span><br></pre></td></tr></table></figure>
+<ul>
+<li>HEXO 블로그의 기반이 되는 폴더를 생성해줍니다. 여기 안에서 모든 작업들이 일어납니다.<ul>
+<li>앞으로 편의 상 폴더명을 <code>twosblog</code> 로 우선 명명하겠습니다.</li>
+</ul>
+</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 폴더명</span><br></pre></td></tr></table></figure>
+<ul>
+<li>예를 들어 <code>cd twosblog</code> 입력하고 Enter키 쳐주시면 됩니다. 폴더 안으로 들어가는 겁니다.</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Node.js라는 놈을 내 HEXO 블로그와 연동시켜 주는겁니다.</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>hexo-generator-searchdb</code> 라는 NexT 테마 안에서 검색에 쓰는 놈을 내 블로그와 연동시켜 주는겁니다.</li>
+<li>더 좋은 검색을 위해 쓰는 플러그인이라고 생각하시면 됩니다.</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>폴더명/themes/next 경로에 NexT 테마가 자동으로 다운되어 설치합니다.</p>
+</li>
+<li><p>혹시 필요하실까봐 <a href="https://github.com/theme-next/hexo-theme-next">NexT 테마 Github</a> 주소를 준비했습니다. 궁금하시면 접속해보세요.</p>
+</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<ul>
+<li>태그와 카테고리를 담을 폴더와 index.md 파일들을 만듭니다. 추후에 살짝 수정해줄게요.</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/11/같은-저장소에-윈도우-10-UEFI-우분투-18-04-BIOS-설치하면-발견되는-오류/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1039,7 +1282,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">포스트</span>
                   </a>
                 </div>
@@ -1199,7 +1442,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">55</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">태그</span>
                   </a>
                 </div>
