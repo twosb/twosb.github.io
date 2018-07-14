@@ -360,6 +360,293 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/27/Selenium 네이버 기사 스크레이핑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="twosb">
+      <meta itemprop="description" content="I'm cutty sexy pretty elegant guy...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="twosb world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/27/Selenium 네이버 기사 스크레이핑/" itemprop="url">
+                  Selenium을 이용한 네이버 기사 10페이지 제목 리스트 스크레이핑!(크롤링)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-06-27 17:28:20" itemprop="dateCreated datePublished" datetime="2018-06-27T17:28:20+09:00">2018-06-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-06-29 23:37:27" itemprop="dateModified" datetime="2018-06-29T23:37:27+09:00">2018-06-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PYTHON/" itemprop="url" rel="index"><span itemprop="name">PYTHON</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/27/Selenium 네이버 기사 스크레이핑/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/27/Selenium 네이버 기사 스크레이핑/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Selenium을-이용한-네이버-기사-10페이지-제목-리스트-스크레이핑-크롤링"><a href="#Selenium을-이용한-네이버-기사-10페이지-제목-리스트-스크레이핑-크롤링" class="headerlink" title="* Selenium을 이용한 네이버 기사 10페이지 제목 리스트 스크레이핑!(크롤링)"></a><strong>* Selenium을 이용한 네이버 기사 10페이지 제목 리스트 스크레이핑!(크롤링)</strong></h4><hr>
+<p>실제 개발 시 구글링을 통해 참고하다보니 쓸데 없이 긴 글 보다 짧지만 정확한 정보가 있는 글이 몰입감이 훨씬 높다는 사실을 깨달았다. 그래서 필요한 과정만 정확히 쓰는 습관을 들이도록 하겠당.. = =</p>
+<p>저번 포스팅에서 예고했던 것 처럼, 스크레이핑 툴인 <a href="https://www.seleniumhq.org" target="_blank" rel="noopener">셀레니움</a>을 이용해 <a href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105" target="_blank" rel="noopener">네이버 IT/과학 홈</a>에 있는 기사 제목 200개를 스크레이핑 해보겠다. IDE은 주피터 노트북을 사용하겠다.</p>
+<blockquote>
+<p>주피터 노트북은 터미널 창에서 <code>pip install jupyter</code> 를 입력하면 설치 할 수 있고, 파일들이 있는 폴더에서 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Bash shell</a>을 실행해 <code>jupyter notebook</code> 을 입력하면 실행시킬 수 있다.</p>
+</blockquote>
+<p><img src="https://i.imgur.com/EcfF4uQ.png" alt=""></p>
+<p><u><strong>* 바로 이 부분의 제목을 스크레이핑 할 것이다.</strong></u></p>
+<h5 id="1-스크레이핑을-위한-Selenium-설치"><a href="#1-스크레이핑을-위한-Selenium-설치" class="headerlink" title="1. 스크레이핑을 위한 Selenium 설치"></a>1. 스크레이핑을 위한 Selenium 설치</h5><p><a href="https://zetawiki.com/wiki/%EC%9C%88%EB%8F%84%EC%9A%B0_%EC%85%80%EB%A0%88%EB%8A%84_%EC%84%A4%EC%B9%98" target="_blank" rel="noopener">이곳</a>에 셀레니움 설치 방법이 나와있다. 조금 수정하자면</p>
+<ul>
+<li>현재 ChromeDriver는 최신 버전이 2.4다. 받아준다.</li>
+<li>chromedriver.exe를 굳이 D:\로 이동해주지 않아도 된다. 아래 예제에 경로가 이렇게 나와 있는데, D:/chromedriver에 해당하는 부분을 chromedriver.exe 파일이 있는 경로로 수정만 하면 된다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome(&apos;D:/chromedriver&apos;) # D:/chromedriver 부분을 수정해주자.</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>설치가 끝났으면 주피터 노트북을 켜고 New file을 만들어주고, 첫 줄에</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">import time</span><br><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure>
+<p>를 입력해주자. 동작을 하지 않는다면 () 안에 들어갈 부분을 적절하게 수정해주자. 그럼 아래와 같은 창이 뜬다.</p>
+<p><img src="https://i.imgur.com/ZatGZAk.png" alt=""></p>
+<p><code>Chrome이 자동화된 테스트 소프트웨어에 의해 제어되고 있습니다.</code> 라는 멘트가 의미심장하다. 바로 이 새로운 Chrome 창에서 우리가 입력하는 명령어들이 수행된다.</p>
+<p><code>import</code> 는 추후 페이지를 이동 할 때 1초의 Delay를 걸어주기 위한 모듈이다. 일단 임포트 해주자.</p>
+<p><br></p>
+<h5 id="2-스크레이핑-할-네이버-기사-타이틀을-긁어오기"><a href="#2-스크레이핑-할-네이버-기사-타이틀을-긁어오기" class="headerlink" title="2. 스크레이핑 할 네이버 기사 타이틀을 긁어오기"></a>2. 스크레이핑 할 네이버 기사 타이틀을 긁어오기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(&quot;http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105&quot;)</span><br></pre></td></tr></table></figure>
+<p><code>get</code> 명령어를 통해 해당 URL로 이동한다. 그럼 자동화된 Chrome창이 아래와 같이 보일 것이다.</p>
+<p><img src="https://i.imgur.com/BHlco8C.png" alt=""></p>
+<p>이어서</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(1)</span><br></pre></td></tr></table></figure>
+<p>코드를 추가해준다. 웹 페이지가 읽어들여질 때 까지 잠깐 기다려 주는 것이다. <code>get</code> 으로 웹페이지를 읽어준 후 추가해주는게 가장 효율적이다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">articles = driver.find_elements_by_css_selector(&apos;#section_body &gt; ul &gt; li &gt; dl &gt; dt &gt; a&apos;)</span><br></pre></td></tr></table></figure>
+<p>그리고 기사 목록을 읽어들여준다.  <code>find_elements_by_css_selector</code> 명령어를 사용해주는데, <a href="https://bit.ly/2ySyRcS" target="_blank" rel="noopener">저번 포스팅</a>에서 사용했던 <code>requests</code> 모듈을 이용한 방식이 아닌 <code>CSS Selector</code> 방식을 사용하겠다.</p>
+<blockquote>
+<p>CSS Selector에 대해 잘 모르겠다면, <a href="http://www.nextree.co.kr/p8468/" target="_blank" rel="noopener">이 곳</a>을 참고하자. 너무나도 잘 설명되어 있다. </p>
+</blockquote>
+<p><br></p>
+<p><img src="https://i.imgur.com/zBdCpK8.png" alt=""></p>
+<p><code>F12</code> 를 눌러 개발자 도구로 들어간다. 그리고 <code>빨간색 원</code> 부분을 눌러준다.  단축키로는 <code>Ctrl+Shift+C</code> 이다. </p>
+<p><img src="https://i.imgur.com/35EdF2c.png" alt=""></p>
+<p>스크롤을 아래로 내리면 기사가 시작되는 부분 가장 위에 <code>배틀그라운드 모바일, 매출 순위 다시 급상승</code> 이라는 기사 제목이 있다.(물론 기사가 계속 바뀌므로 다른 제목이 보일 것이다.)  이를 눌러주면 오른쪽 연한 파란 상자가 해당 제목이 들어가있는 html 코드 부분을 선택해준다.</p>
+<p><img src="https://i.imgur.com/P2orvPJ.png" alt=""></p>
+<p>오른쪽 연한 파란 상자 부분을 오른쪽으로 클릭한 후 <code>Copy -&gt; Copy selector</code> 을 클릭하면</p>
+<p><strong><code>#section_body &gt; ul.type06_headline &gt; li:nth-child(1) &gt; dl &gt; dt:nth-child(2) &gt; a</code></strong> </p>
+<p>가 복사된다. 오른쪽으로 갈 수록 하위 코드로 내려가게 된다. 하나하나 간단하게 뜯어보자.</p>
+<p><br></p>
+<ol>
+<li>#section_body : 앞에 <code>#</code> 는 <code>id</code> 를 나타낸다. </li>
+</ol>
+<p><img src="https://i.imgur.com/QOU0PXg.png" alt=""></p>
+<p>왼쪽은 <code>id=&quot;section_body&quot;</code> 가 해당되는 범위이고, 오른쪽 파란 박스는 해당 id가 포함된 코드 부분이다.</p>
+<p><code>class=&quot;section_body&quot;</code> 를 나타내는 <code>.section_body</code> 로 대체 할 수 있다.</p>
+<p><br></p>
+<ol start="2">
+<li>ul.type06_headline : <code>ul</code> 뒤의 <code>.</code> 은 <code>type06_headline</code> 의 <code>class</code> 를 나타낸다.</li>
+</ol>
+<p><img src="https://i.imgur.com/d4KU1HG.png" alt=""></p>
+<p>HTML에서 목록을 나타내는 태그인 <code>ul</code> 는 순서가 <strong>없는</strong> 목록이며,  <code>ol</code> 은 순서가 <strong>있는</strong> 목록이다.</p>
+<p>ul의 u는 위로 구멍이 뚫려 있으므로 제한이 없고, ol의 o는 구멍이 뚫려있지 않으므로 제한이 없다고 기억하자.</p>
+<p><code>ul.type06_headline</code> = <code>ul</code> + <code>.</code> + <code>type06_headline</code> 이라고 생각하면 된다.</p>
+<p><br></p>
+<ol start="3">
+<li>li:nth-child(1) : <code>li</code> 태그 밑에 붙는 <code>nth-child(1)</code> 에 대해 궁금하다면 <a href="https://bit.ly/2It4Yzr" target="_blank" rel="noopener">이 곳</a>을 참고한다. 카인드데스네~</li>
+<li>dl</li>
+<li>dt:nth-child(2)</li>
+<li>a</li>
+</ol>
+<p>들의 설명은 생략하겠다.. 링크 글을 읽었다면 쉽게 이해할 수 있다. 모르면 댓글로..</p>
+<p><br></p>
+<p>결국, <code>#section_body &gt; ul.type06_headline &gt; li:nth-child(1) &gt; dl &gt; dt:nth-child(2) &gt; a</code>  CSS Selector 코드는 <code>&#39;#section_body &gt; ul &gt; li &gt; dl &gt; dt &gt; a&#39;</code> 코드로 변경된다. (<code>#section_body</code> 는 <code>.section_body</code> 로 변경해도 상관 없다.)</p>
+<p><br></p>
+<h4 id="3-10페이지-기사-제목을-모두-담기"><a href="#3-10페이지-기사-제목을-모두-담기" class="headerlink" title="3. 10페이지 기사 제목을 모두 담기"></a>3. 10페이지 기사 제목을 모두 담기</h4><p>이를 <code>article_Scraping</code> 함수로 만들면 다음과 같다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">article_list = []</span><br><span class="line">def article_Scraping():</span><br><span class="line">    driver = webdriver.Chrome()</span><br><span class="line">    for i in range(1, 11):</span><br><span class="line">        driver.get(&quot;http://news.naver.com/main/main.nhn?\</span><br><span class="line">        mode=LSD&amp;mid=shm&amp;sid1=105#&amp;date=%2000:00:00&amp;page=&quot; + str(i))</span><br><span class="line">        time.sleep(1)</span><br><span class="line">        articles = driver.find_elements_by_css_selector(&apos;#section_body &gt; ul &gt; li &gt; dl &gt; dt &gt; a&apos;)</span><br><span class="line">        for article in articles:</span><br><span class="line">            if article.text == &quot;동영상기사&quot;:</span><br><span class="line">                pass</span><br><span class="line">            elif len(article.text) != 0:</span><br><span class="line">                article_list.append(article.text)                </span><br><span class="line">    driver.quit()</span><br><span class="line">    for article in article_list:</span><br><span class="line">        print(article)</span><br><span class="line">                </span><br><span class="line">article_Scraping()</span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>article_list</code> : 1부터 10페이지의 모든 제목이 담길 list이다.</li>
+<li><code>article_Scraping</code> : 10페이지 기사 제목을 담을 명령을 가진 함수를 만들었다.</li>
+<li><code>driver</code> : <code>chromedriver</code> 실행!</li>
+<li><code>for문 (1)</code> : 1부터 10페이지까지 1페이지 당 20개의 기사 제목들을 <code>article_list</code> 에 담는 노가다를 해준다.</li>
+<li><code>driver.get</code> : 페이지를 이동해준다. 1페이지 주소는 아래와 같이 이루어져 있다.</li>
+</ol>
+<p><img src="https://i.imgur.com/ZXhfxXt.png" alt=""></p>
+<p>끝에 있는 <code>page=1</code>에  <code>1</code> 부분만 <code>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</code> 으로 바꿔주면 된다.</p>
+<p>그래서 <code>for문 (1)</code> 의 <code>range</code> 를 1부터 11까지 잡은 것이다.</p>
+<ol start="6">
+<li><code>time.sleep</code> : get 명령어로 1초 동안 다음 명령어로 움직이지 않고 쿨쿨 자준다.</li>
+<li><code>articles</code> : <code>CSS Selector</code>로  기사가 있는 경로로 접근해준다. 최종 도착점은 <code>a</code> 태그이다. 하지만, <code>articles</code>를 무턱대고 출력하면 아래와 같은 결과가 나온다.</li>
+</ol>
+<p><img src="https://i.imgur.com/gaMYQMZ.png" alt=""></p>
+<p>모든 텍스트를 출력하다보니 아무 내용 없는 <code>&quot;&quot;</code> 부분도 출력해버리게 된다. 걸러야 할 부분은 두 가지이다.</p>
+<ul>
+<li><code>&quot;동영상기사&quot;</code> 라는 내용이 입력된 기사의 Text</li>
+<li><code>&quot;&quot;</code> 로서 Text 길이가 0인 Text</li>
+</ul>
+<ol start="8">
+<li><code>for article in articles:</code> : 첫 번째로 <code>article.text</code> 가 <code>&quot;동영상기사&quot;</code> 인지 판단하여 맞으면 <code>pass</code>.<br>두 번째로 <code>article.text</code> 의 길이가 <code>0</code> 이 아니면(0이면 pass인거임) <code>article_list</code> 에 <code>append</code>.<br>두 조건의 순서가 뒤바뀌면 안된다. </li>
+<li><code>driver.quit</code> : <code>article_list</code> 에 모든 기사 제목이 입력되었기 때문에 <code>chromedriver</code> 를 끈다.</li>
+<li><code>article_list</code> 에 있는 모든 <code>article</code> 을 출력한다.</li>
+<li><code>article_Scraping</code> 함수를 실행한다.</li>
+</ol>
+<p>결과는 아래와 같다.</p>
+<p><img src="https://i.imgur.com/ykRNqMp.png" alt=""></p>
+<p>기사 제목이 한 줄씩 출력된다. 1페이지에 20개 기사씩, 총 200개의 기사 제목이 출력되는 것이다.</p>
+<p><br></p>
+<blockquote>
+<p>어떻게 보면 기초적인 스크레이핑지만, 생각보다 자잘한 조건들을 찾아서 넣어줘야 했다.</p>
+<p>스크레이핑(크롤링)은 노가다다. 노가다를 즐기도록 하자.</p>
+</blockquote>
+<p><br></p>
+<p><strong>* 더 궁금한 부분이 있다면, 댓글을 남겨주세요. 바로 대답 드리겠습니다.</strong></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/24/STATS.NBA.COM 크롤링(스크래핑) by using JSON in Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1392,249 +1679,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/twosb/2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="twosb">
-      <meta itemprop="description" content="I'm cutty sexy pretty elegant guy...">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="twosb world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/" itemprop="url">
-                  Hexo Github 블로그 설치 초보용 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">작성일</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-06-13 03:08:25" itemprop="dateCreated datePublished" datetime="2018-06-13T03:08:25+09:00">2018-06-13</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-06-29 23:37:27" itemprop="dateModified" datetime="2018-06-29T23:37:27+09:00">2018-06-29</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HEXO/" itemprop="url" rel="index"><span itemprop="name">HEXO</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/12/초보용 Hexo 설치 최신판(180613) + 테마 추천(NexT) + 블로그 백업 방법/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>장점과 단점<ul>
-<li>장점 : </li>
-<li>단점 : </li>
-<li>최근 써져있는 Hexo 블로그 설치법과 추천 테마 설정, 타 PC에서 포스팅 하고 싶거나 백업 방법을 알려주고 싶어서 쓰게됨.(OS 변경이라든지, 포맷이라든지..)</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li>준비물 : Node.js, Git 설치<ul>
-<li><a href="https://nodejs.org/ko/download/" target="_blank" rel="noopener">1. Node.js Download</a> : OS에 맞게 8.11.2 LTS 설치</li>
-<li><a href="https://git-scm.com/download" target="_blank" rel="noopener">2. Git Download</a> : OS에 맞게 Git 설치</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p><strong>Hexo + NexT 테마 설치</strong> :</p>
-<ul>
-<li><p>Git Bash를 열고 명령어를 차곡차곡 입력하겠습니다.</p>
-</li>
-<li><p>여기서부터 다른 명령어는 필요 없고 아래대로 입력만 하세요. 조금만 어긋나도 작동이 안됩니다.</p>
-</li>
-<li><p>명령이 끝나면 바로 다음 명령어를 복사해서 입력해주세요. 입력 후에는 Enter키를 눌러줍니다.</p>
-</li>
-</ul>
-</li>
-</ol>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<ul>
-<li>HEXO 구동틀을 PC에 설치해주는겁니다.</li>
-</ul>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 폴더명</span><br></pre></td></tr></table></figure>
-<ul>
-<li>HEXO 블로그의 기반이 되는 폴더를 생성해줍니다. 여기 안에서 모든 작업들이 일어납니다.<ul>
-<li>앞으로 편의 상 폴더명을 <code>twosblog</code> 로 우선 명명하겠습니다.</li>
-</ul>
-</li>
-</ul>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 폴더명</span><br></pre></td></tr></table></figure>
-<ul>
-<li>예를 들어 <code>cd twosblog</code> 입력하고 Enter키 쳐주시면 됩니다. 폴더 안으로 들어가는 겁니다.</li>
-</ul>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Node.js라는 놈을 내 HEXO 블로그와 연동시켜 주는겁니다.</li>
-</ul>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>hexo-generator-searchdb</code> 라는 NexT 테마 안에서 검색에 쓰는 놈을 내 블로그와 연동시켜 주는겁니다.</li>
-<li>더 좋은 검색을 위해 쓰는 플러그인이라고 생각하시면 됩니다.</li>
-</ul>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>폴더명/themes/next 경로에 NexT 테마가 자동으로 다운되어 설치합니다.</p>
-</li>
-<li><p>혹시 필요하실까봐 <a href="https://github.com/theme-next/hexo-theme-next">NexT 테마 Github</a> 주소를 준비했습니다. 궁금하시면 접속해보세요.</p>
-</li>
-</ul>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-<ul>
-<li>태그와 카테고리를 담을 폴더와 index.md 파일들을 만듭니다. 추후에 살짝 수정해줄게요.</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1682,7 +1726,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">포스트</span>
                   </a>
                 </div>
@@ -1719,7 +1763,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">카테고리</span>
                   </a>
                 </div>
@@ -1842,7 +1888,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">55</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">태그</span>
                   </a>
                 </div>
